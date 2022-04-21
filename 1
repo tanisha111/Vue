@@ -1,0 +1,71 @@
+<template>
+<div>
+<div class="display">
+  <input v-model.number="operand1"/>
+  <input v-model.number="operand2"/>
+  = {{result}}
+</div>
+<div class="keyboard">
+ 
+  <button @click ="add">+</button>
+  <button @click ="substract">-</button>
+  <button @click ="divide">/</button>
+  <button @click ="multiply">*</button>
+
+</div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'super-calculator',
+  data () {
+    return {
+      operand1: 0,
+      operand2: 0,
+      result: 0,
+      error: '',
+    }
+  },
+  methods: {
+  add () {
+    this.result = +this.operand1 + +this.operand2
+  },
+  substract () {
+    this.result = this.operand1 - this.operand2
+  },
+  divide () {
+    this.result = this.operand1 / this.operand2
+  },
+  multiply () {
+    this.result = this.operand1 * this.operand2
+  },
+  },
+
+  calculate (operation  = '+') {
+    switch (operation) {
+      case '+':
+        this.add()
+        break;
+    switch (operation) {
+      case '-':
+        this.substract()
+        break;
+    switch (operation) {
+      case '/':
+        this.divide()
+        break;
+    switch (operation) {
+      case '*':
+        this.multiply()
+        break;
+    }
+}
+    }
+    
+</script>
+
+
+<style scoped lang="scss">
+
+</style>
